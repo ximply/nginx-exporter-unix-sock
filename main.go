@@ -122,9 +122,9 @@ func main() {
 	mux.HandleFunc("/metrics", metrics)
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(`<html>
-             <head><title>Memcached Exporter</title></head>
+             <head><title>Nginx Exporter</title></head>
              <body>
-             <h1>Memcached Exporter</h1>
+             <h1>Nginx Exporter</h1>
              <p><a href='` + "/metrics" + `'>Metrics</a></p>
              </body>
              </html>`))
