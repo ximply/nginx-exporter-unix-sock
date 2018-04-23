@@ -119,8 +119,8 @@ func main() {
 	}
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("", metrics)
-	mux.HandleFunc("/metrics", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/metrics", metrics)
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(`<html>
              <head><title>Memcached Exporter</title></head>
              <body>
